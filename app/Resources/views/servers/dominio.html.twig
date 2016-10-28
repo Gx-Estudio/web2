@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+{% block title %}Registro de Dominios{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_search_inner_tables.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="breadcrumbs-v3 img-v3 text-center">
+            <div class="container">
+                <h1>Registro de <span class="color-green">DOMINIOS</span></h1>
+                <p>TODO EMPIEZA CON UN DOMINIO</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-counter-v1 parallaxBg">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <h2 class="title-light text-center">BUSCADOR DE DOMINIO</h2>
+
+                {{ form_start(form, {'attr': {'class': 'input-group'}}) }}
+                {{ form_errors(form) }}
+
+                    {{ form_errors(form.dominio) }}
+                    {{ form_widget(form.dominio, {'attr': {'class': 'form-control', 'placeholder': 'Ingrese el dominio a buscar ejemplo.com.ar'}}) }}
+
+                    <span class="input-group-btn">
+                        {{ form_widget(form.buscar, {'attr': {'class': 'btn-u'}}) }}
+                    </span>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+    {% if respuesta is defined %}
+        <div class="container">
+            <div class="row tag-box tag-box-v5">
+                {% if respuesta == 'disponible' %}
+                    <div class="col-md-8">
+                        <span>
+                            El dominio <i class="color-green">{{ host }}</i> está disponible.
+                            <br>
+                            Regístralo por solo <i class="color-green tooltips" data-toggle="tooltip" data-placement="top" data-original-title="Cuando se registra durante 2 años o más.
+                                    El precio del 1º año es de {{ moneda.sign }} {{ descuento(venta.precio, venta.descuento) }}, y de años adicionales {{ moneda.sign }} {{ precio(venta.precio) }} por año.">{{ moneda.sign }} {{ descuento(venta.precio, venta.descuento) }}*</i>
+                        </span>
+
+                    </div>
+                    <div class="col-md-4">
+                        <p><button class="btn-u btn-u-lg"><i class="fa fa-check" href="#"></i>Adquirir Ahora</button></p>
+                    </div>
+                {% elseif respuesta == 'no disponible' %}
+                    <div class="col-md-12">
+                        <span>Lo sentimos, el dominio <i class="color-green">{{ host }}</i> ya esta registrado.</span>
+                    </div>
+                {% elseif respuesta == 'no registrado' %}
+                    <div class="col-md-12">
+                        <span>Lo sentimos, por el momento el dominio <i class="color-green">{{ host }}</i> no se puede registrar, <a href="{{ path('contacto') }}">contáctese</a> con nosotros para mejor detalle.</span>
+                    </div>
+                {% else %}
+                    <div class="col-md-12">
+                        <span>Lo sentimos, no hemos podido corroborar la disponibilidad del dominio <i class="color-green">{{ host }}</i> por problemas en el servidor, <a href="{{ path('contacto') }}">contáctese</a> con nosotros para mejor detalle.</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+    <div class="container content">
+        <div class="row margin-bottom-40 pricing-light">
+            {% for dominioTop in dominios %}
+                {% if dominioTop.top == 1 %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="sticker-left">Oferta</div>
+                            <div class="pricing-head">
+                                <h3>{{ dominioTop.nombre|upper }} <span>{{ dominioTop.slogan }}</span><span>Antes: {{ moneda.sign }} <del>{{ precio(dominioTop.precio) }}</del></span></h3>
+                            </div>
+                            <div class="pricing-footer">
+                                <h4><i>{{ moneda.sign }}</i>{{ descuento(dominioTop.precio, dominioTop.descuento) }} <span>1er Año</span></h4>
+                                <p>Si registras tu dominio por 2 años o más. Solo págaras {{ moneda.sign }} {{ descuento(dominioTop.precio, dominioTop.descuento) }} el 1° año, Años adicionales {{ moneda.sign }} {{ precio(dominioTop.precio) }} por año.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="panel panel-dark margin-bottom-40">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">LISTADO DE DOMINIOS Y PRECIOS</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Dominio</th>
+                        <th>1er Año</th>
+                        <th>Renovación</th>
+                        <th class="hidden-sm">Transferencia</th>
+                        <th>Restricciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for dominio in dominios %}
+                            <tr>
+                                <td>{{ dominio.nombre }}</td>
+                                <td>{{ moneda.sign }} {{ descuento(dominio.precio, dominio.descuento) }}</td>
+                                <td>{{ moneda.sign }} {{ precio(dominio.precio) }}</td>
+                                <td class="hidden-sm">{{ moneda.sign }} {{ precio(dominio.precio) }}</td>
+                                <td>
+                                    {% if dominio.restricciones is null %}
+                                        <span class="label label-success tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dominio sin restricciones, lo puede registrar cualquier persona">Ninguna</span>
+                                    {% else %}
+                                        <span class="label label-info tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ dominio.restricciones }}">Restringido</span>
+
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+{% block title %}VPS Administrado | Servidores Virtuales{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="breadcrumbs-v3 img-v4 text-center">
+            <div class="container">
+                <h1>Servidores <span class="color-green">privados</span> virtuales</h1>
+                <p>CONTROLA TOTALMENTE TUS SERVICIOS Y DEPENDENCIAS</p>
+            </div>
+        </div>
+
+        <!--=== Content Part ===-->
+        <div class="container content">
+            <!-- Pricing Table v1-->
+            <div class="row pricing-table-v1 no-space-pricing">
+                <div class="headline-center margin-bottom-60">
+                    <h2>PLANES PARA LINUX</h2>
+                </div>
+            </div><!--/row-->
+            <!-- End Pricing Table v1 -->
+
+            <div class="row margin-bottom-40">
+                {% for linux in vps %}
+                    {% if linux.type == 'Linux' %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="pricing-head">
+                                    <h3>{{ linux.nombre }}<span>Plan administrado {{ moneda.sign }} <del>{{ precio(linux.precio) }}</del> *</span></h3>
+                                    <h4><i>{{ moneda.sign }}</i>{{ descuento(linux.precio, linux.descuentoPrecio) }} <span>Por Mes</span></h4>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li><i class="fa fa-gift"></i> Configuración gratis</li>
+                                    <li><i class="fa fa-inbox"></i> Almacenamiento de {{ linux.almacenamiento }}</li>
+                                    <li><i class="fa fa-upload"></i> Transferencia mensual de {{ linux.transferencia }}</li>
+                                    <li><i class="fa fa-chevron-circle-right"></i> Memoria RAM de {{ linux.memoria }}</li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <p>* Descuento valido únicamente adquiriendo el servicio por un año.</p>
+                                    <a class="btn-u" href="#"><i class="fa fa-shopping-cart"></i> Adquirir Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <hr class="margin-bottom-60">
+
+            <!-- Pricing Table v1-->
+            <div class="row pricing-table-v1 no-space-pricing">
+                <div class="headline-center margin-bottom-60">
+                    <h2>PLANES PARA WINDOWS</h2>
+                </div>
+            </div><!--/row-->
+            <!-- End Pricing Table v1 -->
+
+            <div class="row margin-bottom-40 pricing-bg-colored">
+                {% for windows in vps %}
+                    {% if windows.type == 'Windows' %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-right">Nuevo</div>
+                                <div class="pricing-head">
+                                    <h3>{{ windows.nombre }} <span>Plan administrado {{ moneda.sign }} <del>{{ precio(windows.precio) }}</del> *</span></h3>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li><i class="fa fa-gift"></i> Configuración gratis</li>
+                                    <li><i class="fa fa-inbox"></i> Almacenamiento de {{ windows.almacenamiento }}</li>
+                                    <li><i class="fa fa-upload"></i> Transferencia mensual de {{ windows.transferencia }}</li>
+                                    <li><i class="fa fa-chevron-circle-right"></i> Memoria RAM de {{ windows.memoria }}</li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <h4><i>{{ moneda.sign }}</i>{{ descuento(windows.precio, windows.descuentoPrecio) }} <span>Por Mes</span></h4>
+                                    <p>* Descuento valido únicamente adquiriendo el servicio por un año.</p>
+                                    <a href="#" class="btn-u"><i class="fa fa-shopping-cart"></i> Adquirir Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <hr class="margin-bottom-60">
+
+            <!-- Pricing Table v1-->
+            <div class="row pricing-table-v1 no-space-pricing">
+                <div class="headline-center margin-bottom-60">
+                    <h2>Especificaciones detalladas de los servidor</h2>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Servidor de host</h3>
+                        <p><span class="fa fa-check color-green"></span>Tipo de procesador 2x Intel E5-2630L v2</p>
+                        <p><span class="fa fa-check color-green"></span>Procesador core/clock speed 6 core, 2.4/2.8 Ghz</p>
+                        <p><span class="fa fa-check color-green"></span>Memoria del procesador 128 GB ECC DDR3 1600 MHz (8 x 16)</p>
+                        <p><span class="fa fa-check color-green"></span>Memoria caché del procesador 15 MB</p>
+                        <p><span class="fa fa-check color-green"></span>Disco duro de 6x300 GB 10k (ranuras 0, 1, 2, 3, 4, 5)</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Cada VM de múltiples inquilinos ofrece</h3>
+                        <p><span class="fa fa-check color-green"></span>5.000 relés SMTP</p>
+                        <p><span class="fa fa-check color-green"></span>Copias de seguridad de archivos y bases de datos</p>
+
+                        <h3>Software adicional de administración</h3>
+                        <p><span class="fa fa-check color-green"></span>cPanel & WHM para Linux</p>
+                        <p><span class="fa fa-check color-green"></span>Parallels Plesk para Windows</p>
+                    </div>
+                </div>
+
+            </div><!--/row-->
+            <!-- End Pricing Table v1 -->
+
+        </div><!--/container-->
+        <!--=== End Content Part ===-->
+    </div>
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends 'base.html.twig' %}
+{% block title %}Certificados SSL{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container content-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 md-margin-bottom-30">
+                    <h2 class="title-v2">¿QUÉ ES UN CERTIFICADO SSL?</h2>
+                    <p>
+                        Un certificado SSL es un protocolo de seguridad web y esencial para proteger los datos sensibles de los visitantes de su sitio contra el fraude y robo de identidad. SSLs guardan datos al proporcionar cifrado (codificación de los datos para evitar la manipulación durante la transmisión) y validación (verificación de los negocios detrás de la página web).
+                    </p>
+                    <p>
+                        Los certificados SSL vienen en diferentes niveles de seguridad, en función del nivel de funciones de protección y seguridad que necesita. A menudo, estas características son obvias como los sellos del sitio, HTTPS y la "barra verde" son todos los indicadores visuales de un sitio protegido. Otras veces la seguridad está detrás de las escenas. No importa el nivel que elija, la protección SSL asegura a los visitantes que su sitio es seguro, lo que lleva a una mayor confianza del cliente y una mayor fiabilidad para su empresa o marca.
+                    </p>
+                    <br>
+                    <a href="#" class="btn-u">Preguntas frecuentes</a>
+                </div>
+                <div class="col-md-6 hidden-sm hidden-xs">
+                    <img class="img-responsive" src="{{ asset('assets/img/mockup/candado.png') }}">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="text-center margin-bottom-50">
+            <h2 class="title-v2 title-center">LO QUE DEBE BUSCAR AL ELEGIR UN SSL</h2>
+        </div>
+        <div class="tab-v1">
+            <ul class="nav nav-tabs">
+                <li class="text-center col-md-4 col-xs-12"><a href="#dominios" data-toggle="tab" aria-expanded="false">Número de dominios Asegurados</a></li>
+                <li class="text-center col-md-4 col-xs-12 active"><a href="#validacion" data-toggle="tab" aria-expanded="true">Nivel de Validación</a></li>
+                <li class="text-center col-md-4 col-xs-12"><a href="#marca" data-toggle="tab" aria-expanded="false">Reconocimiento de marca</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="validacion">
+                    <br>
+                    <p class="text-center" style="font-size: 20px;">La validación es una característica clave SSL. Nosotros le ayudaremos a aprender acerca de los diferentes niveles de validación y cómo distinguirlos</p>
+                    <br>
+                    <div class="row margin-bottom-40 pricing-light">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/ssl_validation_dv.png') }}">
+                                    <h2><span>Validación de Dominio<br></span> (DV)</h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li>
+                                        Nivel de Validación
+                                        <div class="progress progress-u progress-xs">
+                                            <div class="progress-bar progress-bar-light-green" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="bg-color">Ideal para proteger sitios web, blogs, y aplicaciones personales de Facebook</li>
+                                    <li class="bg-color" style="min-height: 140px;">
+                                        <ul>
+                                            <li style="text-align: left !important;">Fácil activación</li>
+                                            <li style="text-align: left !important;">Sin documentación necesaria</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/ssl_validation_ov.png') }}">
+                                    <h2><span>Validación de Organización<br></span> (OV)</h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li>
+                                        Nivel de Validación
+                                        <div class="progress progress-u progress-xs">
+                                            <div class="progress-bar progress-bar-light-green" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="bg-color">Ideal para asegurar la información del cliente (Por ejemplo, las credenciales de acceso)</li>
+                                    <li class="bg-color" style="min-height: 140px;">
+                                        <ul>
+                                            <li style="text-align: left !important;">Site Seal dinámico</li>
+                                            <li style="text-align: left !important;">Ofrece autentica información de tu compañía al cliente garantizando mayor confianza</li>
+                                            <li style="text-align: left !important;">Tramites que debes realizar</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/ssl_validation_ev.png') }}">
+                                    <h2><span>Validación Extendida<br></span> (EV)</h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li>
+                                        Nivel de Validación
+                                        <div class="progress progress-u progress-xs">
+                                            <div class="progress-bar progress-bar-u" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="bg-color">Ideal para asegurar la información de clientes más sensibles (Por ejemplo, datos de tarjetas de crédito)</li>
+                                    <li class="bg-color" style="min-height: 140px;">
+                                        <ul>
+                                            <li style="text-align: left !important;">Barra verde</li>
+                                            <li style="text-align: left !important;">La más alta función de Confianza</li>
+                                            <li style="text-align: left !important;">Tramites que debes realizar</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="dominios">
+                    <br>
+                    <p class="text-center" style="font-size: 20px;">Los certificados <strong>Single Domain SSL</strong> sólo permiten asegurar un dominio o subdominio único, los <strong>Wildcard SSL</strong> permiten asegurar varios subdominios por un dominio único y los <strong>Multi-Domain SSL</strong> permiten asegurar múltiples dominios y subdominios con un solo certificado.</p>
+                    <br>
+                    <div class="row margin-bottom-40 pricing-light">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/n_domains-1.png') }}">
+                                    <h2><span>Single Domain SSL</span></h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li style="min-height: 110px;">Proporcionan seguridad a un solo nombre de dominio único o de un solo subdominio. Por ejemplo…</li>
+                                    <li style="min-height: 60px;" class="bg-color">dominio.com o dominio.com.ar o dominio.pe</li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/n_domains-2.png') }}">
+                                    <h2><span>Wildcard SSL</span></h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li style="min-height: 110px;">Proporcionan la seguridad de varios subdominios de un dominio único. Por ejemplo, un comodín SSL emitido a *misitio.com puede ser usado para asegurar los nombres de host tales como…</li>
+                                    <li style="min-height: 60px;" class="bg-color">misitio.com, www.misitio.com, login.misitio.com, mail.misitio.com</li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/n_domains-3.png') }}">
+                                    <h2><span>Multi-Domain SSL</span></h2>
+                                </div>
+                                <ul class="pricing-content list-unstyled">
+                                    <li style="min-height: 110px;">Puede asegurar varios sitios web mediante la inclusión de muchos dominios en un certificado. Es ideal para organizaciones con múltiples dominios únicos alojados en un único servidor. Por ejemplo…</li>
+                                    <li style="min-height: 60px;" class="bg-color">blog.misitio.com, seguridad.misitio.co.uk, pagos.misitio.net, www.blog.misitio.org</li>
+                                </ul>
+                                <div class="pricing-footer">
+                                    <br>
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="marca">
+                    <br>
+                    <p class="text-center" style="font-size: 20px;">Cada marca de SSL es conocido como una autoridad de certificación (CA). Una CA es una organización que es de confianza para firmar certificados digitales. También verifica la identidad y la legitimidad de la empresa o persona que solicita un certificado y, si la verificación tiene éxito, emite el certificado firmado. <a class="" href="#">Más información está disponible en aquí.</a></p>
+                    <br>
+                    <div class="row margin-bottom-40 pricing-light">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/brands-1.png') }}">
+                                </div>
+                                <div class="pricing-footer">
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/brands-2.png') }}">
+                                </div>
+                                <div class="pricing-footer">
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/brands-3.png') }}">
+                                </div>
+                                <div class="pricing-footer">
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing hover-effect">
+                                <div class="sticker-left">Nuevo</div>
+                                <div class="pricing-head bg-color">
+                                    <img class="img-responsive" src="{{ asset('assets/img/ssl/brands-4.png') }}">
+                                </div>
+                                <div class="pricing-footer">
+                                    <a href="#" class="btn-u">Ver Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="text-center margin-bottom-50">
+                    <h2 class="title-v2 title-center">¿QUÉ INCLUYE UN CERTIFICADO SSL?</h2>
+                </div>
+                <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                    <div class="col-md-6 md-margin-bottom-40">
+                        <i class="pull-left icon-badge margin-right-10"></i>
+                        <div class="content-boxes-in-v4">
+                            <h2>Sello de sitio</h2>
+                            <p>El sello de sitio es una representación gráfica de su protección y sirve como un recordatorio visual a los clientes que su sitio es seguro y protegido. La mayoría de los usuarios de Internet saben que buscar un sello de sitio - que es también la razón principal por la gente compra SSLs - lo que es importante tener uno. Sellos pueden variar en apariencia dependiendo del tipo de certificado.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 md-margin-bottom-40">
+                        <i class="pull-left icon-support margin-right-10"></i>
+                        <div class="content-boxes-in-v4">
+                            <h2>Soporte de primer nivel</h2>
+                            <p>En Gx-Estudio, nos caracterizamos por brindar mejor servicio al cliente de la industria. Eso es debido a nuestro equipo de apoyo estelar. Además de ser increíblemente bien informado, el personal de apoyo Gx-Estudio son algunos de los votos, la gente más educados en el negocio. Y están disponibles 24/7 para responder a sus preguntas y ofrecer asesoramiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                    <div class="col-md-6 md-margin-bottom-40">
+                        <i class="pull-left icon-globe margin-right-10"></i>
+                        <div class="content-boxes-in-v4">
+                            <h2>La ubicuidad del navegador</h2>
+                            <p>Seleccionamos nuestros certificados SSL para asegurar una fuerte ubicuidad del navegador. Nuestros certs son compatibles con todos los navegadores populares, lo que significa que lo que uno utiliza reconocerá la verificación de SSL Gx-Estudio, manteniendo la experiencia de navegación suave y sin problemas. No hay más clientes preguntan si la empresa que emite el certificado es real o si se garantiza su protección.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 md-margin-bottom-40">
+                        <i class="pull-left icon-lock margin-right-10"></i>
+                        <div class="content-boxes-in-v4">
+                            <h2>Nivel de cifrado</h2>
+                            <p>La seguridad está determinada por el número de bits utilizados para generar la clave de cifrado, que luego se utiliza para cifrar los datos. La mayoría de nuestros certificados SSL utiliza el cifrado de 256 bits o 128 bits, dependiendo de las capacidades del navegador web y el servidor. Tanto el 256 y 128 bits son estándar de la industria para la protección de datos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

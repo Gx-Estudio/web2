@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contáctenos{% endblock %}
+
+{% block meta %}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css') }}">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css') }}"><![endif]-->
+
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_contact.css') }}">
+{% endblock %}
+
+
+
+{% block body %}
+    <!-- Call to Action -->
+    <div class="call-action-v1 bg-color-light">
+        <div class="container">
+            <div class="call-action-v1-box">
+                <div class="call-action-v1-in">
+                    <h3>Contacte con nosotros en <strong class="color-darker">info@gx-estudio.com</strong> o llámenos al <strong class="color-darker">+54 (11) 5436-1442</strong></h3>
+                    <p>Gx Estudio, es la empresa de tecnología creativa que proporciona servicios digitales en internet y estamos para ayudar a nuestros clientes a construir un negocio exitoso en la web.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Call to Action -->
+
+    <!--=== Content Part ===-->
+    <div class="container content">
+        <div class="row margin-bottom-30">
+            <div class="col-md-9 mb-margin-bottom-30">
+
+                <div class="headline"><h1>Contacta al equipo de <span class="color-green">Gx Estudio</span></h1></div>
+                {% if enviado is defined %}
+                    {{ form_start(form, {'attr': {'class': 'sky-form sky-changes-3 submited'}}) }}
+                {% else %}
+                    {{ form_start(form, {'attr': {'class': 'sky-form sky-changes-3'}}) }}
+                {% endif %}
+                    <fieldset>
+                        {{ form_errors(form) }}
+                        <div class="row">
+                            <section class="col col-6">
+                                {{ form_label(form.nombre, 'Nombre', {'label_attr': {'class': 'label'}}) }}
+                                {{ form_errors(form.nombre) }}
+                                <label class="input">
+                                    {{ form_widget(form.nombre, {'attr': {'class': 'input'}}) }}
+                                    <i class="icon-append fa fa-user"></i>
+                                </label>
+                            </section>
+                            <section class="col col-6">
+                                {{ form_label(form.email, 'Email', {'label_attr': {'class': 'label'}}) }}
+                                {{ form_errors(form.email) }}
+                                <label class="input">
+                                    {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
+                                    <i class="icon-append fa fa-envelope-o"></i>
+                                </label>
+                            </section>
+                        </div>
+                        <div class="row">
+                            <section class="col col-6">
+                                {{ form_label(form.telefono, 'Teléfono', {'label_attr': {'class': 'label', 'type': 'tel'}}) }}
+                                {{ form_errors(form.telefono) }}
+                                <label class="input">
+                                    {{ form_widget(form.telefono, {'attr': {'class': 'input'}}) }}
+                                    <i class="icon-append fa fa-phone"></i>
+                                </label>
+                            </section>
+                            <section class="col col-6">
+                                {{ form_label(form.pais, 'Pais', {'label_attr': {'class': 'label'}}) }}
+                                {{ form_errors(form.pais) }}
+                                <label class="select">
+                                    {{ form_widget(form.pais, {'attr': {'class': 'input'}}) }}
+                                    <i></i>
+                                </label>
+                            </section>
+                        </div>
+                        <section>
+                            {{ form_label(form.asunto, 'Asunto', {'label_attr': {'class': 'label'}}) }}
+                            {{ form_errors(form.asunto) }}
+                            <label class="input">
+                                {{ form_widget(form.asunto, {'attr': {'class': 'input'}}) }}
+                                <i class="icon-append fa fa-tag"></i>
+                            </label>
+                        </section>
+
+                        <section>
+                            {{ form_label(form.mensaje, 'Mensaje', {'label_attr': {'class': 'label'}}) }}
+                            {{ form_errors(form.mensaje) }}
+                            <label class="textarea">
+                                {{ form_widget(form.mensaje, {'attr': {'rows': '5'}}) }}
+                                <i class="icon-append fa fa-comment"></i>
+                            </label>
+                        </section>
+                    </fieldset>
+                    <footer>
+                        {{ form_widget(form.enviar,  {'attr': {'class': 'btn-u'}}) }}
+                    </footer>
+                    <div class="message">
+                        <i class="rounded-x fa fa-check"></i>
+                        <p>¡Su mensaje fue enviado con éxito!</p>
+                    </div>
+                {{ form_end(form) }}
+
+            </div><!--/col-md-9-->
+            <div class="col-md-3">
+                <!-- Contacts -->
+                <div class="headline"><h2>Contáctenos</h2></div>
+                <ul class="list-unstyled who margin-bottom-30">
+                    <li><a href="#"><i class="fa fa-envelope"></i>info@gx-estudio.com</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>soporte@gx-estudio.com</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>pagos@gx-estudio.com</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>(+54) 11 5436-1442</a></li>
+                    <li><a href="#"><i class="fa fa-mobile"></i>(+54) 911 6223-4364</a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp"></i>(+54) 911 6223-4364</a></li>
+                </ul>
+
+                <!-- Business Hours -->
+                <div class="headline"><h2>Horario de atención</h2></div>
+                <ul class="list-unstyled margin-bottom-30">
+                    <li><strong>Todos los días</strong> Las 24 hs.</li>
+                </ul>
+
+                <!-- Why we are? -->
+                <div class="headline"><h2>¿Necesitas Asesoría?</h2></div>
+                <p>Déjanos un mensaje con tu teléfono o chatea con nosotros para que podamos asesorarte.</p>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-check color-green"></i> Asesoría gratuita</li>
+                    <li><i class="fa fa-check color-green"></i> Confidencialidad de información</li>
+                    <li><i class="fa fa-check color-green"></i> Respuesta inmediata</li>
+                </ul>
+            </div><!--/col-md-3-->
+        </div><!--/row-->
+    </div>
+    <!--/container-->
+{% endblock %}

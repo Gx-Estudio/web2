@@ -1,0 +1,82 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends "SonataUserBundle:Security:base_login.html.twig" %}
+
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Iniciar sesión</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                <li class="active">Iniciar sesión</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block fos_user_content %}
+    {% block sonata_user_login %}
+        {% block sonata_user_login_form %}
+            <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+                <div class="reg-header">
+                    <h2>Ingrese a su cuenta</h2>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                {% block sonata_user_login_error %}
+                    {% if error %}
+                        <div class="alert alert-danger alert-error">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="username">Nombre de Usuario o Email</label>
+                    <input class="full-width has-padding has-border" type="text" placeholder="Nombre de Usuario o Email" id="username" name="_username" value="{{ last_username }}" required="required">
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="password">Contraseña</label>
+                    <input class="full-width has-padding has-border" type="password"  placeholder="Contraseña" id="password" name="_password" required="required">
+                    <a href="javascript:void(0);" class="hide-password">Mostrar</a>
+                </p>
+
+                <p class="fieldset">
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+                    <label for="remember_me">Mantener la sesión iniciada</label>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width has-padding" type="submit" id="_submit" name="_submit" value="Iniciar sesión"/>
+                </p>
+
+
+                <hr>
+
+                <h4 class="text-center">¿Olvidaste tu contraseña?</h4>
+                <p class="text-center">No se preocupe, <a class="color-green" href="{{ path('fos_user_resetting_request') }}">haga clic aquí</a> para restablecer su contraseña.</p>
+
+                <hr>
+
+                <h4 class="text-center">¿No estas registrado?</h4>
+                <p class="text-center">No se preocupe, <a class="color-green" href="{{ path('fos_user_registration_register') }}">haga clic aquí</a> para registrarse.</p>
+
+            </form>
+        {% endblock %}
+    {% endblock %}
+{% endblock fos_user_content %}

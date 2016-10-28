@@ -1,0 +1,234 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css') }}"
+          xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="breadcrumbs-v3 img-v2 text-center margin-bottom-40">
+            <div class="container">
+                <h1>MEDIOS DE <span class="color-green">PAGO</span></h1>
+            </div>
+        </div>
+
+        <div class="container margin-bottom-60">
+
+            <div class="headline-center">
+                <h2>PAGOS ONLINE</h2>
+            </div>
+
+            <div class="row margin-bottom-40">
+                <div class="col-md-6 col-sm-6">
+                    <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <div class="caption">
+                            <h2 style="text-align: center;"><a class="hover-effect" data-toggle="modal" data-target="#paypal" href="">PAYPAL</a></h2>
+                        </div>
+                        <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                                <img class="img-responsive" src="{{ asset('assets/img/main/img1.jpg') }}" alt="">
+                            </div>
+                            <a class="btn-more hover-effect" data-toggle="modal" data-target="#paypal" href="">+ Información</a>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="paypal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h3 id="myModalLabel1" class="modal-title">Paypal</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>PayPal es un servicio global que te permite enviar pagos a la cuenta del vendedor con tu tarjeta de crédito, pero sin compartir tu información financiera.</p>
+
+                                    <hr>
+
+                                    <h4>Tarjetas soportadas</h4>
+
+                                    <ul>
+                                        <li>MasterCard</li>
+                                        <li>Visa</li>
+                                        <li>Visa Electron (tarjeta de débito)</li>
+                                        <li>American Express</li>
+                                        <li>Aurora (tarjetas de marca compartida)</li>
+                                        <li>Las tarjetas Maestro (MasterCard de débito) no se aceptan en nuestro sistema.</li>
+                                    </ul>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn-u" type="button">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <div class="caption">
+                            <h2 style="text-align: center;"><a class="hover-effect" data-toggle="modal" data-target="#payu" href="">PAYU</a></h2>
+                        </div>
+                        <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                                <img class="img-responsive" src="{{ asset('assets/img/main/img2.jpg') }}" alt="">
+                            </div>
+                            <a class="btn-more hover-effect" data-toggle="modal" data-target="#payu" href="">+ Información</a>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="payu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h3 id="myModalLabel1" class="modal-title">Payu</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Cuando comprás por tiendas virtuales que usan PayU, podés estar seguro de que tu información personal está protegida.</p>
+
+                                    <hr>
+
+                                    <h4>Tarjetas soportadas</h4>
+
+                                    <ul>
+                                        <li>MasterCard</li>
+                                        <li>Visa</li>
+                                        <li>Visa Electron (tarjeta de débito)</li>
+                                        <li>American Express</li>
+                                        <li>Diners Club</li>
+                                        <li>Naranja</li>
+                                        <li>Argencard</li>
+                                        <li>Cencosud</li>
+                                        <li>Tarjeta Shoping</li>
+                                        <li>Cabal</li>
+                                    </ul>
+
+                                    <h4>Pagos en efectivo Argentina</h4>
+
+                                    <ul>
+                                        <li>Pago Fácil</li>
+                                        <li>Rapipago</li>
+                                        <li>Ripsa Pagos</li>
+                                        <li>Provincia NET</li>
+                                        <li>Cobro Express</li>
+                                    </ul>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn-u" type="button">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="headline-center">
+                <h2>PAGOS POR DEPOSITO</h2>
+            </div>
+
+            <div class="row margin-bottom-40">
+                <div class="col-md-6 col-sm-6">
+                    <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <div class="caption">
+                            <h2 style="text-align: center;"><a class="hover-effect" data-toggle="modal" data-target="#argentina" href="">ARGENTINA</a></h2>
+                        </div>
+                        <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                                <img class="img-responsive" src="{{ asset('assets/img/main/img3.jpg') }}" alt="">
+                            </div>
+                            <a class="btn-more hover-effect" data-toggle="modal" data-target="#argentina" href="">+ Información</a>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="argentina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h3 id="myModalLabel1" class="modal-title">Depósito en cuenta corriente Argentina</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Los depósitos en cuenta corriente deben informarse con el número de transacción al correo <a href="mailto:pagos@gx-estudio.com">pagos@gx-estudio.com</a>, para que se acredite el pago.</p>
+
+                                    <hr>
+
+                                    <h4>Cuenta Banco Nación</h4>
+
+                                    <dl class="dl-horizontal">
+                                        <dt>Caja de Ahorros Pesos</dt>
+                                        <dd>00020005395550</dd>
+                                        <dt>Titular</dt>
+                                        <dd>Jesus Rene, Quispe Montalvo</dd>
+                                        <dt>CUIL</dt>
+                                        <dd>20950531402</dd>
+                                        <dt>CBU</dt>
+                                        <dd>0110599530000053955501</dd>
+                                    </dl>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn-u" type="button">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <div class="caption">
+                            <h2 style="text-align: center;"><a class="hover-effect" data-toggle="modal" data-target="#peru" href="">PERÚ</a></h2>
+                        </div>
+                        <div class="thumbnail-img">
+                            <div class="overflow-hidden">
+                                <img class="img-responsive" src="{{ asset('assets/img/main/img4.jpg') }}" alt="">
+                            </div>
+                            <a class="btn-more hover-effect" data-toggle="modal" data-target="#peru" href="">+ Información</a>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="peru" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h3 id="myModalLabel1" class="modal-title">Depósito en cuenta corriente Perú</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Los depósitos en cuenta corriente deben informarse con el número de transacción al correo <a href="mailto:pagos@gx-estudio.com">pagos@gx-estudio.com</a>, para que se acredite el pago.</p>
+
+                                    <hr>
+
+                                    <h4>Cuenta Interbank</h4>
+
+                                    <dl class="dl-horizontal">
+                                        <dt>Cuenta Simple Soles</dt>
+                                        <dd>157-3046409803</dd>
+                                        <dt>Titular</dt>
+                                        <dd>Jesus Rene, Quispe Montalvo</dd>
+                                        <dt>CCI</dt>
+                                        <dd>00315701304640980352</dd>
+                                    </dl>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn-u" type="button">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+

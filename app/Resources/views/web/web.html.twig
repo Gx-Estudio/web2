@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+{% block title %}Diseño de página web {{ web.nombre }}{% endblock %}
+{% block meta %}
+    <meta name="description" content="Por solo {{ moneda.sign~' '~descuento(web.precio, web.descuentoPrecio)  }} obtendrás una web profesional y con un diseño adaptable. Con {{ web.hosting.emails }} correos corporativos y 1 año GRATIS de dominio .COM">
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}" xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+{% block body %}
+
+    <!--=== Content Part ===-->
+
+    <div class="">
+        <div class="bg-color-light">
+            <div class="container content-sm">
+                <div class="row">
+                    <div class="col-md-4 md-margin-bottom-10">
+                        <img class="img-responsive" src="{{ asset(web.imagen) }}" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <br><br>
+                        <div class="headline-left margin-bottom-30">
+                            <h1 class="headline-brd" style="font-size: 35px">Página <span class="color-green">Web</span> {{ web.nombre }}</h1>
+                            <p>
+                                {{ include(template_from_string(web.descripcion)) }}
+                            </p>
+                        </div>
+                        <ul class="list-unstyled lists-v2">
+                            <li><i class="fa fa-check"></i> Diseño web amigable y adaptable</li>
+                            <li><i class="fa fa-check"></i> Posicionamiento SEO para buscadores</li>
+                            <li><i class="fa fa-check"></i> Seguridad para ti y tus clientes</li>
+                        </ul>
+                    </div><!--/end row-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Flat Background Block -->
+        <div class="flat-bg-block-v1 parallaxBg margin-bottom-60">
+            <div class="container">
+                <div class="headline-center">
+                    <h2>Estructura del sitio</h2>
+                    <p>La página web {{ web.nombre }} está compuesta por {{ web.componentes|length }} secciones:</p>
+                </div>
+                {% for componente in web.componentes %}
+                    <hr class="devider devider-dashed">
+                    <span class="dropcap"><i class="icon-custom icon-lg rounded bg-color-green {{ componente.imagen }}"></i></span>
+                    <h3 class="color-green" style="font-size: 30px; margin-top: 40px">{{ componente.nombre }}</h3>
+                    <p>{{ componente.descripcion }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Flat Background Block -->
+
+
+        <div class="container">
+            <!-- Pricing Rounded -->
+            <div class="row margin-bottom-40 pricing-bg-colored">
+                <div class="col-md-6 col-sm-6">
+                    <div class="pricing hover-effect">
+                        {% if web.descuentoPrecio > 0 %}
+                            <div class="sticker-right">{{ web.descuentoPrecio }}% <i class="fa fa-gift"></i></div>
+                        {% endif %}
+                        <div class="pricing-head">
+                            <h3>Diseño Web<span>Precios con IVA incluido</span></h3>
+                        </div>
+                        <ul class="pricing-content list-unstyled">
+                            <li><i class="fa fa-gift"></i> Diseño del sitio</li>
+                            <li><i class="fa fa-globe"></i> Registro de dominio por 1 año</li>
+                            <li><i class="fa fa-cog"></i> Activación del CPanel</li>
+                            <li><i class="fa fa-inbox"></i> Instalación del sitio</li>
+                        </ul>
+
+                        <div class="pricing-footer">
+                            {% if web.descuentoPrecio > 0 %}
+                                <div class="sticker-descuento">Antes:<br>{{ moneda.sign }} <del>{{ precio(web.precio) }}</del></div>
+                            {% endif %}
+                            <h4><i>{{ moneda.sign }}</i>{{ descuento(web.precio, web.descuentoPrecio) }} <span>Pago Único</span></h4>
+                            <p>Precio expresado en {{ moneda.name }} (IVA Incluído)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="pricing hover-effect">
+                        {% if web.descuentoAbono > 0 %}
+                            <div class="sticker-right">{{ web.descuentoAbono }}% <i class="fa fa-gift"></i></div>
+                        {% endif %}
+                        <div class="pricing-head">
+                            <h3>Abono mensual<span>Precios con IVA incluido</span></h3>
+                        </div>
+                        <ul class="pricing-content list-unstyled">
+                            <li><i class="fa fa-edit"></i> Mantenimiento del sitio web</li>
+                            <li><i class="fa fa-cloud-upload"></i> Hosting {{ web.hosting.almacenamiento }} de espacio</li>
+                            <li><i class="fa fa-envelope"></i> {{ web.hosting.emails }} Correos electronicos</li>
+                            <li><i class="fa fa-tasks"></i> Transferencia mensual ilimitada</li>
+                        </ul>
+                        <div class="pricing-footer">
+                            {% if web.descuentoAbono > 0 %}
+                                <div class="sticker-descuento">Antes:<br>{{ moneda.sign }} <del>{{ precio(web.abono) }}</del></div>
+                            {% endif %}
+                            <h4><i>{{ moneda.sign }}</i>{{ descuento(web.abono, web.descuentoAbono) }} <span>Por Mes</span></h4>
+                            <p>Precio expresado en {{ moneda.name }} (IVA Incluído)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/end Pricing Rounded -->
+        </div>
+
+        <div class="container">
+            <div class="heading heading-v4">
+                <h2 class="color-green">Adicionales optativos a tu abono</h2>
+            </div>
+            <div class="row margin-bottom-10">
+                <div class="col-md-4 col-sm-4">
+                    <div class="service-block service-block-blue">
+                        <h2 class="heading-md">PUBLICIDAD EN FACEBOOK</h2>
+                        <h2 class="text-center h2">{{ moneda.sign }} {{ precio(5) }}<span class="h5">X Día</span></h2>
+                        <p>Publica tu página web en Facebook e Instagram y llega a millones de clientes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="service-block service-block-red">
+                        <h2 class="heading-md">PUBLICIDAD EN GOOGLE</h2>
+                        <h2 class="text-center h2">{{ moneda.sign }} {{ precio(6) }}<span class="h5">X Día</span></h2>
+                        <p>Publica tu página web en Google el más grande buscador y consigue clientes potenciales.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="service-block service-block-purple">
+                        <h2 class="heading-md">CERTIFICADO SSL</h2>
+                        <h2 class="text-center h2">{{ moneda.sign }} {{ precio(100) }}<span class="h5">X Año</span></h2>
+                        <p>Asegura tu sitio web digitalmente con un certificado para cualquier transaccion de datos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content Part -->
+
+    {% include 'component/contacto.html.twig' %}
+
+{% endblock %}
+

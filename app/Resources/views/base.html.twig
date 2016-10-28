@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="es" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+
+
+<html lang="es"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Diseño Web Profesional{% endblock %} | Gx Estudio</title>
+
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block meta %}
+            <meta name="description" content="Gx Estudio les ofrece, Diseño Web Profesional y Económico, Dominios, Web Hosting, Servidores Dedicados, VPS, SEO, SEM, email marketing y más.">
+        {% endblock %}
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- Web Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+        <!-- CSS Global Compulsory -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+        <!-- CSS Header and Footer -->
+        <link rel="stylesheet" href="{{ asset('assets/css/headers/header-v8.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/footers/footer-v8.css') }}">
+
+        <!-- Icons Font -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/line-icons/line-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/font-awesome/css/font-awesome.min.css') }}">
+
+        <!-- Login Header -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/login-signup-modal-window/css/style.css') }}">
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        <!-- CSS Customization -->
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
+        <!-- CSS Theme -->
+        <link rel="stylesheet" href="{{ asset('assets/css/theme-colors/default.css') }}" id="style_color">
+        <link rel="stylesheet" href="{{ asset('assets/css/theme-skins/dark.css') }}">
+    </head>
+    <body class="header-fixed header-fixed-space-v2">
+    <div class="wrapper">
+        <!--=== Header v8 ===-->
+        <div class="header-v8 header-sticky">
+            <!-- Topbar blog -->
+            <div class="blog-topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-xs-8 clearfix">
+                            <div class="topbar-time">Email: info@gx-estudio.com</div>
+                            <ul class="topbar-list topbar-log_reg">
+                                <li>
+                                    <a href="javascript:void(0);"><img src="{{ asset(moneda.imagen) }}" alt="{{ moneda.name }}" width="16" height="11"> Moneda: {{ moneda.sign }} <span class="fa fa-angle-down"></span></a>
+                                    <ul class="topbar-dropdown">
+                                        {% for moneda in monedas %}
+                                            <li><a href="javascript:location.reload()" onclick="cookies('currency',{{ moneda.id }})"><img src="{{ asset(moneda.imagen) }}" alt="{{ moneda.name }}" width="16" height="11"> {{ moneda.sign }} </a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-xs-4 clearfix">
+                            <ul class="topbar-list topbar-log_reg pull-right">
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    <li class="home">Bienvenido <span class="color-green">{{ app.user.username }}</span></li>
+                                    <li><a href="#">Cerrar Sesión</a></li>
+                                {% else %}
+                                    <li class="home"><a href="#">Iniciar Sesión</a></li>
+                                    <li><a href="#">Registrarse</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div><!--/end row-->
+                </div><!--/end container-->
+            </div>
+            <!-- End Topbar blog -->
+
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="res-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-brand">
+                            <a href="/..">
+                                <img src="{{ asset('assets/img/logo1-default.png') }}" alt="Logo">
+                            </a>
+                        </div>
+                    </div><!--/end responsive container-->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="res-container">
+                            {{ knp_menu_render('main', {'currentClass': 'active', 'ancestorClass': 'active'}) }}
+                        </div><!--/responsive container-->
+                    </div><!--/navbar-collapse-->
+                </div><!--/end contaoner-->
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header v8 ===-->
+
+        {% block breadcrumbs %}{% endblock %}
+
+        {% block body %}{% endblock %}
+
+        <!--=== Footer v8 ===-->
+        <div class="footer-v8">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 column-one md-margin-bottom-50">
+                            <a href="/.."><img class="footer-logo" src="{{ asset('assets/img/logo1-white.png') }}" alt=""></a>
+                            <span>Buenos Aires - Argentina</span>
+                            <p>Av. Córdoba 3883 (Palermo - CABA)</p>
+                            <hr>
+                            <span>Teléfonos:</span>
+                            <p><i class="fa fa-phone"></i>  (+54) 11 5436-1442</p>
+                            <p><i class="fa fa-whatsapp"></i>  (+54) 911 6223-4364</p>
+                            <hr>
+                            <span>Email:</span>
+                            <a href="mailto:info@gx-estudio.com">info@gx-estudio.com</a>
+                            <br>
+                            <a href="mailto:soporte@gx-estudio.com">soporte@gx-estudio.com</a>
+                            <br>
+                            <a href="mailto:pagos@gx-estudio.com">pagos@gx-estudio.com</a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 md-margin-bottom-50">
+                            <h2>Sobre nosotros</h2>
+                            <!-- Footer Lists -->
+                            <p>Somos una empresa que nace con el objetivo de brindar soluciones de Web Hosting, para las empresas y personas que requieran anunciarse en internet.</p>
+                            <p class="margin-bottom-40">Gx Estudio, genera soluciones, diseña, desarrolla y comercializa plataformas web optimizando su sitio para una mayor visualización en los motores de búsqueda.</p>
+                            <!-- End Footer Lists -->
+
+                            <h2>Enlaces de interés</h2>
+                            <!-- Footer Lists -->
+                            <ul class="footer-lists">
+                                <li><i class="fa fa-angle-right"></i><a href="{{ path('manuales') }}">Manuales de servicios</a></li>
+                                <li><i class="fa fa-angle-right"></i><a href="{{ path('privacidad') }}">Política de privacidad</a></li>
+                                <li><i class="fa fa-angle-right"></i><a href="{{ path('legales') }}">Legales</a></li>
+                            </ul>
+                            <!-- End Footer Lists -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 md-margin-bottom-50">
+
+                            <h2>Medios de pago</h2>
+                            <!-- Latest News -->
+                            <div class="latest-news">
+                                <img src="{{ asset('assets/img/thumb/01.jpg') }}" alt="">
+                                <h3><a href="{{ path('pagos') }}">PAYPAL</a></h3>
+                                <p>Permite la transferencia de dinero mediante una tarjeta de crédito.</p>
+                            </div>
+
+                            <hr>
+
+                            <div class="latest-news">
+                                <img src="{{ asset('assets/img/thumb/02.jpg') }}" alt="">
+                                <h3><a href="{{ path('pagos') }}">PAYU</a></h3>
+                                <p>Pagos en línea de forma segura a través de internet.</p>
+                            </div>
+
+                            <hr>
+
+                            <div class="latest-news">
+                                <img src="{{ asset('assets/img/thumb/03.jpg') }}" alt="">
+                                <h3><a href="{{ path('pagos') }}">DEPÓSITOS ARGENTINA</a></h3>
+                                <p>Transferencias bancarias (Banco nacion y Banco ciudad).</p>
+                            </div>
+
+                            <hr>
+
+                            <div class="latest-news">
+                                <img src="{{ asset('assets/img/thumb/04.jpg') }}" alt="">
+                                <h3><a href="{{ path('pagos') }}">DEPÓSITOS PERÚ</a></h3>
+                                <p>Transferencias bancarias (Interbank y BCP).</p>
+                            </div>
+                            <!-- End Latest News -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 md-margin-bottom-50">
+                            <h2>Newsletter</h2>
+                            <p><strong>Suscríbase</strong> a nuestro boletín de noticias y estará al día con las últimas noticias y ofertas.</p><br>
+
+                            <!-- Form Group -->
+                            <div class="input-group margin-bottom-50">
+                                <input class="form-control" type="email" placeholder="Ingrese su email">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn-u input-btn">Suscribirse</button>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+
+                            <h2>Redes Sociales</h2>
+                            <p>Mantente al tanto suscribiéndote a nuestras redes sociales.</p>
+
+                            <!-- Social Icons -->
+                            <ul class="social-icon-list">
+                                <li><a href="https://twitter.com/GxEstudio" target="_blank"><i class="rounded-x fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/GxEstudio" target="_blank"><i class="rounded-x fa fa-facebook"></i></a></li>
+                                <li><a href="https://plus.google.com/+Gxestudioplus" target="_blank"><i class="rounded-x fa fa-google-plus"></i></a></li>
+                                <li><a href="https://www.youtube.com/user/GxEstudio" target="_blank"><i class="rounded-x fa fa-youtube"></i></a></li>
+                            </ul>
+                            <!-- End Social Icons -->
+                        </div>
+                    </div><!--/end row-->
+                </div><!--/end container-->
+            </footer>
+
+            <footer class="copyright">
+                <div class="container">
+                    <ul class="list-inline terms-menu">
+                        <li>Copyright &copy 2013 - {{ "now"|date("Y") }} <span class="color-green">Gx Estudio</span>. Todos los derechos reservados.</li>
+                    </ul>
+                </div><!--/end container-->
+            </footer>
+        </div>
+        <!--=== End Footer v8 ===-->
+
+
+    </div>
+    <!--/wrapper-->
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/jquery/jquery-migrate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="{{ asset('assets/plugins/back-to-top.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('assets/plugins/smoothScroll.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('assets/plugins/modernizr.js') }}"></script>
+    <script src="{{ asset('assets/plugins/login-signup-modal-window/js/main.js') }}"></script>
+    <script src="{{ asset('assets/plugins/js.cookie.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/style-switcher.js') }}"></script>
+
+    <!-- JS Customization -->
+    <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}"></script>
+
+    {% block javascripts %}
+    {% endblock %}
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+            StyleSwitcher.initStyleSwitcher();
+
+            {% block scriptsready %}
+            {% endblock %}
+        });
+
+        function cookies(cookie,valor) {
+            Cookies.set(cookie, valor);
+            window.opener.location.reload();
+        }
+
+        <!--Start of Zopim Live Chat Script-->
+                window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+                        d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+                _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+                    $.src="//v2.zopim.com/?4Bb9byyNjI3Jg4eXgJXcmYzMk4jwpxbu";z.t=+new Date;$.
+                            type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+        <!--End of Zopim Live Chat Script-->
+
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="{{ asset('assets/plugins/respond.js') }}"></script>
+    <script src="{{ asset('assets/plugins/html5shiv.js') }}"></script>
+    <script src="{{ asset('assets/plugins/placeholder-IE-fixes.js') }}"></script>
+    <![endif]-->
+    </body>
+</html>

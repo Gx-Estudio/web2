@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_404_error.css') }}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Manuales</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                <li class="active">Manuales</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="container content">
+        <!--Error Block-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="error-v1">
+                    <span class="error-v1-title">...</span>
+                    <span>Página en construcción</span>
+                    <p>Lo sentimos, esta sección esta en construcción.</p>
+                    <a class="btn-u btn-bordered" href="{{ path('inicio') }}">Regresar al inicio</a>
+                </div>
+            </div>
+        </div>
+        <!--End Error Block-->
+    </div>
+{% endblock %}
+

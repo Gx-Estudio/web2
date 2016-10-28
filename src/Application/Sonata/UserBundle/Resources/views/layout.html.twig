@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_log_reg_v1.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="shadow-wrapper">
+                    <div class="tag-box tag-box-v1 box-shadow shadow-effect-2 cd-form">
+                        {% block fos_user_content %}
+                        {% endblock fos_user_content %}
+                    </div>
+                </div>
+            </div>
+        </div><!--/row-->
+    </div>
+{% endblock %}

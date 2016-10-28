@@ -1,0 +1,69 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    appbundle.twig.extension.string:
+        class: Twig_Extension_StringLoader
+        tags:
+            - { name: 'twig.extension' }
+
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory"]
+        tags:
+            - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
+            - { name: knp_menu.menu_builder, method: createProfileMenu, alias: profile }
+
+    currency.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\Currency
+
+    app.currency:
+        class: AppBundle\Twig\CurrencyExtension
+        arguments:
+            - "@currency.repository"
+        tags:
+            - { name: twig.extension }
+
+    app.price:
+        class: AppBundle\Twig\PriceFunctionExtension
+        public: false
+        arguments:
+            - "@app.currency"
+        tags:
+            - { name: twig.extension }
+
+    app.domain_parser:
+        class: AppBundle\Utils\DomainParser
+
+    server.dominio.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\ServerDominio
+
+    app.domain_find:
+        class: AppBundle\Utils\DomainFind
+        arguments:
+            - "@server.dominio.repository"
+            - "@app.domain_parser"
+
+    app.api.whois:
+        class: AppBundle\Apis\WhoisApi
+        arguments:
+            - "@server.dominio.repository"
+            - "@app.domain_parser"
+
+    app.form.registration:
+        class: Application\Sonata\UserBundle\Form\Type\UserRegistrationType
+        parent: fos_user.registration.form.type
+        tags:
+            - { name: form.type, alias: front_user_registration }

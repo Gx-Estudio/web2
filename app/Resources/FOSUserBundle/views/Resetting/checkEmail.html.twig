@@ -1,0 +1,25 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Restablecer contraseña</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                <li class="active">Restablecer contraseña</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block fos_user_content %}
+    <div class="reg-header">
+        <h2>Restablecimiento de contraseña</h2>
+    </div>
+
+    <p class="text-center">{{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}</p>
+
+    <hr>
+
+    <p class="text-center"><a class="color-green" href="{{ path('inicio') }}"> Regresar al inicio </a></p>
+{% endblock %}

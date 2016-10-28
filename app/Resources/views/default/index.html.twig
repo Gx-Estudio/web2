@@ -1,0 +1,263 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/master-slider/masterslider/style/masterslider.css') }}">
+    <link rel='stylesheet' href="{{ asset('assets/plugins/master-slider/masterslider/skins/black-2/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/owl-carousel/owl-carousel/owl.carousel.css') }}">
+{% endblock %}
+
+{% block body %}
+    <!--=== Slider ===-->
+    <div class="ms-layers-template">
+        <!-- masterslider -->
+        <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
+            <div class="ms-slide" style="z-index: 10">
+                <img src="{{ asset('assets/plugins/master-slider/masterslider/style/blank.gif') }}" data-src="{{ asset('assets/img/bg/img3.jpg') }}" alt="">
+                <div class="ms-layer ms-promo-info color-light" style="left:15px; top:160px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="700"
+                     data-ease="easeOutExpo"
+                >Diseño</div>
+
+                <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:210px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1000"
+                     data-ease="easeOutExpo"
+                ><span class="color-green">Web</span> Económico</div>
+
+                <div class="ms-layer ms-promo-sub color-light" style="left:15px; top:310px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1300"
+                     data-ease="easeOutExpo"
+                >Anuncia tus servicios en internet a bajo costo <br> ideal para microempresas.</div>
+
+
+                <a class="ms-layer btn-u" style="left:15px; top:390px" href="{{ path('website_show', {'slug': 'economica'}) }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >MÁS INFORMACIÓN</a>
+
+                <a class="ms-layer btn-u btn-u-dark" style="left:200px; top:390px" href="{{ path('contacto') }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >CONTÁCTENOS</a>
+            </div>
+            <div class="ms-slide" style="z-index: 10">
+                <img src="{{ asset('assets/plugins/master-slider/masterslider/style/blank.gif') }}" data-src="{{ asset('assets/img/bg/00.jpg') }}" alt="">
+                <div class="ms-layer ms-promo-info color-light" style="left:15px; top:160px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="700"
+                     data-ease="easeOutExpo"
+                >Tienda Online</div>
+
+                <div class="ms-layer ms-promo-info ms-promo-info-in color-light" style="left:15px; top:210px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1000"
+                     data-ease="easeOutExpo"
+                >Web <span class="color-darker">E-commerce</span></div>
+
+                <div class="ms-layer ms-promo-sub color-dark" style="left:15px; top:310px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1300"
+                     data-ease="easeOutExpo"
+                >Vende tus productos y ofrece tus servicios por internet <br> mientras disfrutas de tu vida.</div>
+
+
+                <a class="ms-layer btn-u" style="left:15px; top:390px" href="{{ path('website_show', {'slug': 'e-commerce'}) }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >MÁS INFORMACIÓN</a>
+
+                <a class="ms-layer btn-u btn-u-dark" style="left:200px; top:390px" href="{{ path('contacto') }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >CONTÁCTENOS</a>
+            </div>
+            <div class="ms-slide" style="z-index: 10">
+                <img src="{{ asset('assets/plugins/master-slider/masterslider/style/blank.gif') }}" data-src="{{ asset('assets/img/bg/img2.jpg') }}" alt="">
+                <div class="ms-layer ms-promo-info color-light" style="left:15px; top:160px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="700"
+                     data-ease="easeOutExpo"
+                >Administre su sitio</div>
+
+                <div class="ms-layer ms-promo-info ms-promo-info-in color-green" style="left:15px; top:210px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1000"
+                     data-ease="easeOutExpo"
+                ><span class="color-light">Web</span> Gestionable</div>
+
+                <div class="ms-layer ms-promo-sub color-light" style="left:15px; top:310px"
+                     data-effect="bottom(40)"
+                     data-duration="2000"
+                     data-delay="1300"
+                     data-ease="easeOutExpo"
+                >Obten el control total de tu sitio web y modifica a tu gusto.</div>
+
+
+                <a class="ms-layer btn-u" style="left:15px; top:390px" href="{{ path('website_show', {'slug': 'gestionable'}) }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >MÁS INFORMACIÓN</a>
+
+                <a class="ms-layer btn-u btn-u-dark" style="left:200px; top:390px" href="{{ path('contacto') }}"
+                   data-effect="bottom(40)"
+                   data-duration="2000"
+                   data-delay="1300"
+                   data-ease="easeOutExpo"
+                >CONTÁCTENOS</a>
+            </div>
+        </div>
+        <!-- end of masterslider -->
+    </div>
+    <!--=== End Slider ===-->
+
+    {% include 'component/contacto.html.twig' %}
+
+    <!--=== Content Part ===-->
+    <div class="content-md">
+        <div class="container">
+            <!-- Service Box -->
+            <div class="row text-center margin-bottom-60">
+                <div class="col-md-4 md-margin-bottom-50">
+                    <img alt="" src="{{ asset('assets/img/icons/flat/01.png') }}" class="image-md margin-bottom-20">
+                    <h1 class="title-v3-md margin-bottom-10">Diseño Web Adaptable</h1>
+                    <p>Tu sitio web se verá bien en todo dispositivo, como Smartphone's, Tablet's, Smart TV y computadoras.</p>
+                </div>
+                <div class="col-md-4 flat-service md-margin-bottom-50">
+                    <img alt="" src="{{ asset('assets/img/icons/flat/02.png') }}" class="image-md margin-bottom-20">
+                    <h2 class="title-v3-md margin-bottom-10">Asesoramiento Publicitario</h2>
+                    <p>Publicítate a través de internet con las mejores herramientas como Google, Facebook, YouTube y más.</p>
+                </div>
+                <div class="col-md-4 flat-service">
+                    <img alt="" src="{{ asset('assets/img/icons/flat/03.png') }}" class="image-md margin-bottom-20">
+                    <h2 class="title-v3-md margin-bottom-10">Estadísticas y Rendimiento</h2>
+                    <p>Te brindamos información con estadísticas de todos nuestros servicios para que puedas ver el rendimiento de tu sitio.</p>
+                </div>
+            </div>
+            <!-- End Service Box -->
+        </div><!--/container -->
+
+        <div class="bg-color-light">
+            <div class="container content-sm">
+                <div class="row">
+                    <div class="col-md-6 md-margin-bottom-50">
+                        <img alt="" src="{{ asset('assets/img/mockup/imac2.png') }}" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <br><br><br>
+                        <div class="headline-left margin-bottom-30">
+                            <h2 class="headline-brd">PÁGINA WEB ECONÓMICA</h2>
+                            <p>Muestra tus servicios o productos a través de internet, es la oportunidad perfecta para que puedas conseguir más clientes.</p>
+                        </div>
+                        <ul class="list-unstyled lists-v2 margin-bottom-30">
+                            <li><i class="fa fa-check"></i> Diseño web adaptable</li>
+                            <li><i class="fa fa-check"></i> Correos coporativos</li>
+                            <li><i class="fa fa-check"></i> Posicionamiento SEO <span class="color-green">Gratis</span></li>
+                            <li><i class="fa fa-check"></i> Dominio <span class="color-green">Gratis</span> por un año</li>
+                        </ul>
+                        <a class="btn-u btn-brd btn-brd-hover btn-u-dark" href="{{ path('website_show', {'slug': 'economica'}) }}">Más Detalles</a>
+                    </div><!--/end row-->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="headline-center margin-bottom-60">
+                <h2>¿Por qué elegirnos?</h2>
+                <p>Si usted es un profesional experimentado de Internet, o acaba de empezar con su primer sitio web, nuestro equipo de profesionales está aquí para ayudarle en cada paso del camino. Estamos aquí 24/7/365 para ayudarle con cualquier aspecto de su experiencia de alojamiento. No nos prohíba la oportunidad de superar sus expectativas.</p>
+            </div><!--/end Headline Center-->
+
+            <div class="row margin-bottom-40">
+                <div class="col-md-4">
+                    <div class="content-boxes-v5 margin-bottom-30">
+                        <i class="rounded-x icon-layers"></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Operatividad 99.9%</h3>
+                            <p>La disponibilidad de su sitio web es nuestra máxima prioridad. Por ello le ofrecemos 99,9% garantía de operatividad.</p>
+                        </div>
+                    </div>
+                    <div class="content-boxes-v5 md-margin-bottom-30">
+                        <i class="rounded-x icon-settings"></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Configuración gratis</h3>
+                            <p>Configuramos y mantenemos actualizado el sistema de tu servidor web. Completamente gratis y sin ningún costo adicional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-boxes-v5 margin-bottom-30">
+                        <i class="rounded-x icon-earphones-alt "></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Soporte 24/7/365</h3>
+                            <p>Nuestro equipo de soporte está para ayudarle a través de LiveChat o por correo electrónico con cualquier problema con nuestros servicios.</p>
+                        </div>
+                    </div>
+                    <div class="content-boxes-v5 md-margin-bottom-30">
+                        <i class="rounded-x icon-shield"></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Antivirus</h3>
+                            <p>Protege todo tu servidor web de troyanos, virus, malware y otras amenazas maliciosas con un potente escáner de alto rendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-boxes-v5 margin-bottom-30">
+                        <i class="rounded-x icon-refresh"></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Garantía</h3>
+                            <p>¡Prueba nuestros servicios sin ningún riesgo! Si no está completamente satisfecho, puede cancelar dentro de los <a href="{{ path('legales') }}#moneyback">30 días</a> para un reembolso completo.</p>
+                        </div>
+                    </div>
+                    <div class="content-boxes-v5 md-margin-bottom-30">
+                        <i class="rounded-x icon-lock"></i>
+                        <div class="overflow-h">
+                            <h3 class="no-top-space">Firewall de seguridad</h3>
+                            <p>Bloquea el acceso no autorizado de personas maliciosas. Aquellos que no cumplen los criterios de seguridad para su sitio serán bloqueados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/end row-->
+        </div><!--/end container-->
+    </div>
+    <!-- End Content Part -->
+
+{% endblock %}
+
+{% block javascripts %}
+    <!-- Gem jQuery -->
+    <script src="{{ asset('assets/plugins/master-slider/masterslider/masterslider.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/master-slider/masterslider/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ asset('assets/plugins/owl-carousel/owl-carousel/owl.carousel.js') }}"></script>
+
+    <!-- JS Page Level -->
+    <script src="{{ asset('assets/js/plugins/fancy-box.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/owl-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/master-slider-fw.js') }}"></script>
+{% endblock %}
+{% block scriptsready %}
+    MSfullWidth.initMSfullWidth();
+    FancyBox.initFancybox();
+    OwlCarousel.initOwlCarousel();
+{% endblock %}

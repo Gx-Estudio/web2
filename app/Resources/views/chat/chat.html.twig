@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}Chat de atención al cliente{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container content-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 md-margin-bottom-30">
+                    <h1 class="title-v2">CHAT DE ATENCIÓN AL CLIENTE</h1>
+                    <p>
+                        El chat de Asistencia en Línea es una herramienta de gran efectividad para generar confianza, cerrar más ventas y convertir a tus clientes en fans de tu marca, brindándoles respuestas inmediatas y en tiempo real a sus consultas.
+                    </p>
+
+                    <ul class="list-unstyled lists-v2 margin-bottom-30">
+                        <li><i class="fa fa-check"></i> Completos reportes y estadísticas</li>
+                        <li><i class="fa fa-check"></i> Mayor eficiencia y productividad</li>
+                        <li><i class="fa fa-check"></i> Historial de conversaciones</li>
+                        <li><i class="fa fa-check"></i> Seguridad para ti y tus clientes</li>
+                        <li><i class="fa fa-check"></i> Respuestas programadas</li>
+                    </ul>
+                    <a href="#" class="btn-u">Preguntas frecuentes</a>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <img class="img-responsive" src="{{ asset('assets/img/mockup/live-chat.png') }}">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container content">
+            <!-- Pricing -->
+            <div class="row margin-bottom-40">
+                {% for chat in chats %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="pricing-head">
+                                <h3>{{ chat.operadores }} Operadores<span>Antes: {{ moneda.sign }} <del>{{ precio(chat.precioMes) }}</del></span></h3>
+                                <h4><i>{{ moneda.sign }}</i>{{ descuento(chat.precioMes, chat.descuento) }} <span>Por Mes</span></h4>
+                            </div>
+                            <ul class="pricing-content list-unstyled">
+                                <li><i class="fa fa-wrench"></i> ¡Muy simple de configurar!</li>
+                                <li><i class="fa fa-magic"></i> Personalización total</li>
+                                <li><i class="fa fa-bar-chart"></i> Seguimiento de visitas en tiempo real</li>
+                                <li><i class="fa fa-users"></i> Atención ONLINE Y OFFLINE!</li>
+                            </ul>
+                            <div class="pricing-footer">
+                                <br>
+                                <a class="btn-u" href="#"><i class="fa fa-shopping-cart"></i> Adquirir Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div><!--/row-->
+            <!-- End Pricing -->
+
+        </div>
+    </div>
+{% endblock %}

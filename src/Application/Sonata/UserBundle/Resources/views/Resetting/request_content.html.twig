@@ -1,0 +1,27 @@
+<form action="{{ path('sonata_user_resetting_send_email') }}" method="POST">
+    <div class="reg-header">
+        <h2>Restablecimiento de contraseña</h2>
+    </div>
+
+    {% if invalid_username is defined %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}
+        </div>
+    {% endif %}
+
+    <p class="fieldset">
+        <label for="username" class="image-replace cd-email">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }} * </label>
+        <input class="full-width has-padding has-border" type="text" placeholder="Nombre de Usuario o Email" id="username" name="username" required="required">
+    </p>
+
+    <p class="fieldset">
+        <input type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" class="full-width has-padding" />
+    </p>
+
+    <hr>
+
+    <h4 class="text-center">¿No estas registrado?</h4>
+    <p class="text-center">No se preocupe, <a class="color-green" href="{{ path('fos_user_registration_register') }}">haga clic aquí</a> para crear una.</p>
+
+</form>

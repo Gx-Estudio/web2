@@ -1,0 +1,56 @@
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register form-horizontal">
+    <div class="reg-header">
+        <h2>Sistema de registro</h2>
+    </div>
+
+    {{ form_start(form) }}
+        {% if form_errors(form.username) or  form_errors(form.email) or form_errors(form.plainPassword.first) is not empty %}
+            <div class="alert alert-danger alert-error">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                {{ form_errors(form.username) }}
+                {{ form_errors(form.email) }}
+                {{ form_errors(form.plainPassword.first) }}
+            </div>
+        {% endif %}
+
+        <p class="fieldset">
+            {{ form_label(form.username, 'Usuario', {'label_attr': {'class': 'image-replace cd-username'}}) }}
+            {{ form_widget(form.username, {'attr': {'placeholder': 'Usuario', 'class': 'full-width has-padding has-border'}}) }}
+        </p>
+
+        <p class="fieldset">
+            {{ form_label(form.email, 'Email', {'label_attr': {'class': 'image-replace cd-email'}}) }}
+            {{ form_widget(form.email, {'attr': {'placeholder': 'Email', 'class': 'full-width has-padding has-border'}}) }}
+        <p>
+
+        <p class="fieldset">
+            {{ form_label(form.plainPassword.first, 'Contraseña', {'label_attr': {'class': 'image-replace cd-password'}}) }}
+            {{ form_widget(form.plainPassword.first, {'attr': {'placeholder': 'Contraseña', 'class': 'full-width has-padding has-border'}}) }}
+        <p>
+
+        <p class="fieldset">
+            {{ form_label(form.plainPassword.second, 'Confirmar contraseña', {'label_attr': {'class': 'image-replace cd-password'}}) }}
+            {{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'Confirmar contraseña', 'class': 'full-width has-padding has-border'}}) }}
+        <p>
+
+        <p class="fieldset">
+            {{ form_widget(form.tyc) }}
+            He leído y acepto los <a href="{{ path('legales') }}" class="color-green">Términos y Condiciones</a>
+        <p>
+
+        <p class="fieldset">
+            <input class="full-width has-padding" type="submit" id="_submit" name="_submit" value="Registrarse"/>
+        </p>
+
+
+        <hr>
+
+        <h4 class="text-center">¿Ya estas registrado?</h4>
+        <p class="text-center">Ingresa a tu cuenta, <a class="color-green" href="{{ path('fos_user_security_login') }}">haga clic aquí</a> para iniciar sesión.</p>
+
+    {{ form_end(form) }}
+
+</form>
+
+

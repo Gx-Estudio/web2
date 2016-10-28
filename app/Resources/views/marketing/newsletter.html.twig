@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% block title %}Email Marketing{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container content-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 md-margin-bottom-30">
+                    <h1 class="title-v2">EMAIL MARKETING</h1>
+                    <p>
+                        Dentro de las distintas estrategias de marketing online, la del Email Marketing es una de las más efectivas en términos del Retorno de la Inversión.
+                    </p>
+
+                    <ul class="list-unstyled lists-v2 margin-bottom-30">
+                        <li><i class="fa fa-check"></i> Aumentar tus ventas</li>
+                        <li><i class="fa fa-check"></i> Fidelizar a tus Clientes</li>
+                        <li><i class="fa fa-check"></i> Elevar el tráfico de tu web</li>
+                        <li><i class="fa fa-check"></i> Llegar a nuevos clientes</li>
+                        <li><i class="fa fa-check"></i> Informar a tus usuarios</li>
+                    </ul>
+                    <a href="#" class="btn-u">Preguntas frecuentes</a>
+                </div>
+                <div class="col-md-5">
+                    <img class="img-responsive" src="{{ asset('assets/img/mockup/newsletter.png') }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="container content">
+            <!-- Pricing -->
+            <div class="row margin-bottom-40">
+                {% for news in newsletters %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="pricing-head">
+                                <h3>{{ news.envios|number_format(0, '.', ',') }}<span>Envios mensuales</span></h3>
+                                <h4><i>{{ moneda.sign }}</i>{{ precio(news.precioMes) }} <span>Por Mes</span></h4>
+                            </div>
+                            <ul class="pricing-content list-unstyled">
+                                <li><i class="fa fa-gift"></i> Contáctos <b class="color-green">{{ news.contactos }}</b></li>
+                                <li><i class="fa fa-cloud"></i> Imagenes almacenadas <b class="color-green">{{ news.imagenes }}</b></li>
+                                <li><i class="fa fa-users"></i> Formulario de registro <b class="color-green">{{ news.formularios }}</b></li>
+                                <li><i class="fa fa-send"></i> Envió automático <b class="color-green">{{ news.envios }}</b></li>
+                            </ul>
+                            <div class="pricing-footer">
+                                <br>
+                                <a class="btn-u" href="#"><i class="fa fa-shopping-cart"></i> Adquirir Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div><!--/row-->
+            <!-- End Pricing -->
+            <div class="tab-v1">
+                <div class="tab-content">
+                    <div class="text-center margin-bottom-50">
+                        <h2 class="title-v2 title-center">BENEFICIOS DEL EMAIL MARKETING</h2>
+                    </div>
+                    <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-envelope margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Diseño personalizados de newsletter</h2>
+                                <p>Realizamos el diseño, maquetado, configuración de html, link. Creamos e-mails formato texto, html o multipart (Texto y HTML) para ampliar la efectividad de tus campañas y minimizar el riesgo de que tu e-mail sea atrapado por los filtros Anti-Spam.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-bar-chart margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Estadisticas de envio</h2>
+                                <p>Creá accesos especiales para que puedas observar los reportes de las campañas que vos determines evitando que ellos puedan generar errores. Obtenés información sobre lecturas, clicks, rebotes y mucho más, en tiempo real.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-settings margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Configuración y seteo de la campaña</h2>
+                                <p>Carga de la Publicidad en nuestro Software. Cargar la base de datos del cliente en nuestro software.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-globe margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Integración con Redes Sociales</h2>
+                                <p>Aprovechá el potencial de las Redes Sociales y multiplicá el poder de tus campañas, permitiendo a tus suscriptores compartir el contenido de forma simple y rápida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

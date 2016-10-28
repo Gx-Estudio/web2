@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block title %}Posicionamiento SEM{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container content-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 md-margin-bottom-30">
+                    <h1 class="title-v2">ANUNCIATE EN GOOGLE</h1>
+                    <p>
+                        Te ayudamos a publicitarte en el buscador más usado para que tus clientes puedan encontrarte, además te ayudamos a configurar tu sitio web para que obtengas un buen resultado.
+                    </p>
+
+                    <ul class="list-unstyled lists-v2 margin-bottom-30">
+                        <li><i class="fa fa-check"></i> Llega a más clientes</li>
+                        <li><i class="fa fa-check"></i> Promociona tus productos o servicios</li>
+                        <li><i class="fa fa-check"></i> SEO gratis para nuestros clientes de diseño web</li>
+                        <li><i class="fa fa-check"></i> Empieza con presupuestos bajos y ve los resultados</li>
+                        <li><i class="fa fa-check"></i> Asesoría y estadísticas en todo momento</li>
+                    </ul>
+                    <a href="{{ path('contacto') }}" class="btn-u btn-u-default">Contáctenos</a>
+                    <a href="#" class="btn-u">Preguntas frecuentes</a>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{{ asset('assets/img/mockup/seo-sem.png') }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="container content">
+            <div class="tab-v1">
+                <div class="tab-content">
+                    <div class="text-center margin-bottom-50">
+                        <h2 class="title-v2 title-center">BENEFICIOS DE ANUNCIARTE CON NOSOTROS</h2>
+                    </div>
+                    <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-settings margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Estructuramos tu anuncio</h2>
+                                <p>Nuestro gran equipo de expertos especializados en SEM te ayudara a realizar tu anuncio en google con palabras claves, para que puedas tener los mejores resultados sin tener que gastar demás.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-check margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>SEO completamente gratis</h2>
+                                <p>Si tu sitio web está diseñado por nosotros y alojado con nosotros, entonces lo configuraremos y prepararemos para que tengas preferencia en las búsquedas (SEO), completamente GRATIS.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row content-boxes-v4 content-boxes-v4-sm margin-bottom-30">
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-graph margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Comience con cualquier presupuesto</h2>
+                                <p>Usted decide cuánto desea invertir. Sólo comience con el presupuesto diario que le parezca adecuado y ajústelo cuando usted quiera.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 md-margin-bottom-40">
+                            <i class="pull-left icon-earphones-alt margin-right-10"></i>
+                            <div class="content-boxes-in-v4">
+                                <h2>Asesoramiento en todo momento</h2>
+                                <p>Si nos necesita, estamos a su disposición, usted administra sus campañas por ello decide cuándo y cuánto es lo que desea invertir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

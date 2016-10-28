@@ -1,0 +1,17 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Registro de usuario</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                <li class="active">Registro de usuario</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block fos_user_content %}
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}

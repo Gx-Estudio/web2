@@ -1,0 +1,17 @@
+{% extends "SonataUserBundle::layout.html.twig" %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Restablecer contraseña</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                <li class="active">Restablecer contraseña</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block fos_user_content %}
+    {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+{% endblock fos_user_content %}

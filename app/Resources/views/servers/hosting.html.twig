@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+{% block title %}Web Hosting Profesional{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="breadcrumbs-v3 img-v1 text-center">
+            <div class="container">
+                <h1>Web <span class="color-green">HOSTING</span></h1>
+                <p>HOSTING DE ALTA VELOCIDAD Y FÁCIL CONFIGURACIÓN</p>
+            </div>
+        </div>
+
+        <!--=== Content Part ===-->
+        <div class="container content">
+            <!-- Pricing Table v1-->
+            <div class="row pricing-table-v1 no-space-pricing">
+                <div class="headline-center margin-bottom-60">
+                    <h2>PLANES PARA LINUX</h2>
+                    <p>Tenemos uno de los entornos de hospedaje web más estables en la Internet, utilizando lo mejor en hardware y software, junto con enormes conductos de ancho de banda y galardonados centros de datos coubicados en categoría 1. Garantizando un tiempo de actividad del 99.9% que es tan importante para nosotros como lo es para nuestros clientes.</p>
+                </div>
+            </div><!--/row-->
+            <!-- End Pricing Table v1 -->
+
+            <div class="row no-space-pricing pricing-mega-v1">
+                <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
+                    <div class="pricing hidden-area">
+                        <div class="pricing-head ">
+                            <h4 class="price">Abono Mensual</h4>
+                        </div>
+                        <ul class="pricing-content list-unstyled">
+                            <li class="bg-color"> <i class="fa fa-gift"></i>Configuración de Cuenta (GRATIS)</li>
+                            <li> <i class="fa fa-cloud-upload"></i>Espacio en Disco</li>
+                            <li class="bg-color"> <i class="fa fa-globe"></i>Dominios Aparcados</li>
+                            <li> <i class="fa fa-group"></i>Sub Dominios</li>
+                            <li class="bg-color"> <i class="fa fa-soundcloud"></i>Transferencia Mensual</li>
+                            <li> <i class="fa fa-envelope"></i>Cuentas de E-mail</li>
+                            <li class="bg-color"> <i class="fa fa-html5"></i>Web Mail</li>
+                            <li> <i class="fa fa-reply"></i>Reenvio de E-mail</li>
+                            <li class="bg-color"> <i class="fa fa-shield"></i>Antivirus / Antispam</li>
+                            <li> <i class="fa fa-info-circle"></i>Cuentas IMAP / POP3 / SMTP</li>
+                            <li class="bg-color"> <i class="fa fa-database"></i>Base de Datos MySQL 5.1</li>
+                            <li> <i class="fa fa-list-alt"></i>phpMyAdmin</li>
+                            <li class="bg-color"> <i class="fa fa-code"></i>PHP 5.0</li>
+                            <li> <i class="fa fa-cogs"></i>Acceso FTP</li>
+                            <li class="bg-color"> <i class="fa fa-dashboard"></i>Panel de Control / Cpanel</li>
+                            <li> <i class="fa fa-support"></i>Soporte 24/7</li>
+                            <li class="bg-color"> <i class="fa fa-upload"></i>Servidores de Alto Rendimiento</li>
+                            <li> <i class="fa fa-plus-square"></i>Cortafuegos de Redundancia Triple</li>
+                            <li class="bg-color"> <i class="fa fa-save"></i>Copia de Seguridad en Raid</li>
+                            <li> <i class="fa fa-eye"></i>Monitoreo de Red 24/7</li>
+                            <li class="bg-color"> <i class="fa fa-sitemap"></i>Conexiones Multi-homed OC48</li>
+                            <li> <i class="fa fa-external-link-square"></i>Conexiones de Fibra Gigabit</li>
+                            <li class="bg-color"> <i class="fa fa-retweet"></i>Respaldo de Energía con SAIs</li>
+                            <li> <i class="fa fa-leaf"></i>Servidores Ecológicos</li>
+                            <li class="bg-color"> <i class="fa fa-recycle"></i>Energía Renovable Certificados (RECs)</li>
+                        </ul>
+                    </div>
+                </div>
+                {% for hosting in hosting %}
+                    <div class="col-md-3 col-sm-6 block">
+                    <div class="pricing">
+                        <div class="pricing-head">
+                            <h3>{{ hosting.nombre }}<span>IVA incluido</span> </h3>
+                            <h4 class="price"><i>{{ moneda.sign }}</i>{{ descuento(hosting.precioMes, hosting.descuentoPrecioAnual) }} <span class="hidden-md hidden-lg">Por Mes</span></h4>
+                        </div>
+                        <ul class="pricing-content list-unstyled">
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Configuración de Cuenta (GRATIS)</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Espacio en Disco</span>{{ hosting.almacenamiento }}</li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Dominios</span>Ilimitados*</li>
+                            <li><span class="hidden-md hidden-lg">Sub Dominios</span>Ilimitados*</li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Transferencia Mensual</span>Ilimitada*</li>
+                            <li><span class="hidden-md hidden-lg">Cuentas de E-mail</span>{{ hosting.emails }}</li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Web Mail</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Reenvio de E-mail</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Antivirus / Antispam</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Cuentas IMAP / POP3 / SMTP</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Base de Datos MySQL 5.1</span>Ilimitadas*</li>
+                            <li><span class="hidden-md hidden-lg">phpMyAdmin</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">PHP 5.4</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Acceso FTP</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Panel de Control / Cpanel</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Soporte 24/7</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Servidores de Alto Rendimiento</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Cortafuegos de Redundancia Triple</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Copia de Seguridad en Raid</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Monitoreo de Red 24/7</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Conexiones Multi-homed OC48</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Conexiones de Fibra Gigabit</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Respaldo de Energía con SAIs</span><i class="fa fa-check"></i></li>
+                            <li><span class="hidden-md hidden-lg">Servidores Ecológicos</span><i class="fa fa-check"></i></li>
+                            <li class="bg-color"><span class="hidden-md hidden-lg">Energía Renovable Certificados (RECs)</span><i class="fa fa-check"></i></li>
+                        </ul>
+                        <div class="btn-group btn-group-justified">
+                            <button type="button" class="btn-u btn-block dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-shopping-cart"></i> Comience Ahora <i class="fa fa-angle-down"></i> </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">3 Años - {{ moneda.sign }} {{ descuento(hosting.precioMes, hosting.descuentoPrecioTriAnual) }} /mes</a></li>
+                                <li><a href="#">2 Años - {{ moneda.sign }} {{ descuento(hosting.precioMes, hosting.descuentoPrecioBiAnual) }} /mes</a></li>
+                                <li><a href="#">1 Año - {{ moneda.sign }} {{ descuento(hosting.precioMes, hosting.descuentoPrecioAnual) }} /mes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <p>* Las características ilimitadas de nuestros planes de web hosting, tiene el sólo propósito de que los usuarios dispongan de un sitio web y correo electrónico para construir una presencia online efectiva, haciendo un buen uso del servicio. Para garantizar la calidad del mismo y una excelente experiencia de utilización para todos los usuarios, aplican restricciones que puedes leer en nuestros Términos y Condiciones de uso.</p>
+
+        </div><!--/container-->
+        <!--=== End Content Part ===-->
+    </div>
+{% endblock %}
