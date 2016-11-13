@@ -14,10 +14,10 @@
         <div class="bg-color-light">
             <div class="container content-sm">
                 <div class="row">
-                    <div class="col-md-4 md-margin-bottom-10">
+                    <div class="col-md-5 md-margin-bottom-10">
                         <img class="img-responsive" src="{{ asset(web.imagen) }}" alt="">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <br><br>
                         <div class="headline-left margin-bottom-30">
                             <h1 class="headline-brd" style="font-size: 35px">Página <span class="color-green">Web</span> {{ web.nombre }}</h1>
@@ -40,13 +40,20 @@
             <div class="container">
                 <div class="headline-center">
                     <h2>Estructura del sitio</h2>
-                    <p>La página web {{ web.nombre }} está compuesta por {{ web.componentes|length }} secciones:</p>
+                    <p>
+                        La página web {{ web.nombre }} está compuesta por
+                        {% if web.componentes|length == 0 %}
+                            2 secciones estáticas y 3 administrables.
+                        {% else %}
+                            {{ web.componentes|length }} secciones:
+                        {% endif %}
+                    </p>
                 </div>
                 {% for componente in web.componentes %}
                     <hr class="devider devider-dashed">
                     <span class="dropcap"><i class="icon-custom icon-lg rounded bg-color-green {{ componente.imagen }}"></i></span>
                     <h3 class="color-green" style="font-size: 30px; margin-top: 40px">{{ componente.nombre }}</h3>
-                    <p>{{ componente.descripcion }}</p>
+                    <p>{{ include(template_from_string(componente.descripcion)) }}</p>
                 {% endfor %}
             </div>
         </div>

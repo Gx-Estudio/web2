@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, 'GxEstudio'
-set :repo_url, 'git@gitlab.com:Gx-Estudio/web2.git'
+set :repo_url, 'git@github.com:Gx-Estudio/web2.git'
 
 set :use_sudo, false
 

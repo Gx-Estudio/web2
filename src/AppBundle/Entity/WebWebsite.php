@@ -75,7 +75,7 @@ class WebWebsite
      * @ORM\ManyToMany(targetEntity="WebComponente")
      * @ORM\JoinTable(name="web_websites_componentes",
      *      joinColumns={@ORM\JoinColumn(name="web_website_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="web_componente_id", referencedColumnName="id")}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="web_componente_id", referencedColumnName="id", unique=true)}
      *      )
      */
     private $componentes;
