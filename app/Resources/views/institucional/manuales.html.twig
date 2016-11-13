@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Tutoriales {{ web.nombre }}{% endblock %}
+{% block meta %}
+    <meta name="description" content="Soporte técnico para configurar y administrar tus servicios web.">
+{% endblock %}
+
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/css/pages/page_404_error.css') }}">
 {% endblock %}

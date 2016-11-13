@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Medios de pago {{ web.nombre }}{% endblock %}
+{% block meta %}
+    <meta name="description" content="Medios de pago, para los servicios adquiridos en Gx-Estudio.">
+{% endblock %}
+
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css') }}"
           xmlns="http://www.w3.org/1999/html">
