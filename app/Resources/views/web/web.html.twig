@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Diseño de página web {{ web.nombre }}{% endblock %}
 {% block meta %}
-    <meta name="description" content="Por solo {{ moneda.sign~' '~descuento(web.precio, web.descuentoPrecio)  }} obtendrás una web profesional y con un diseño adaptable. Con {{ web.hosting.emails }} correos corporativos y 1 año GRATIS de dominio .COM">
+    <meta name="description" content="{{ include(template_from_string(web.seoDescription)) }}">
 {% endblock %}
+
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/css/pages/page_pricing.css') }}" xmlns="http://www.w3.org/1999/html">
 {% endblock %}
+
 {% block body %}
 
     <!--=== Content Part ===-->

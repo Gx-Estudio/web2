@@ -31,6 +31,13 @@ class WebWebsite
     /**
      * @var string
      *
+     * @ORM\Column(name="seo_description", type="text")
+     */
+    private $seoDescription;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="descripcion", type="text")
      */
     private $descripcion;
@@ -364,5 +371,29 @@ class WebWebsite
     public function getHosting()
     {
         return $this->hosting;
+    }
+
+    /**
+     * Set seoDescription
+     *
+     * @param string $seoDescription
+     *
+     * @return WebWebsite
+     */
+    public function setSeoDescription($seoDescription)
+    {
+        $this->seoDescription = $seoDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get seoDescription
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        return $this->seoDescription;
     }
 }
