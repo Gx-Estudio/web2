@@ -1,40 +1,25 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css') }}">
+{% endblock %}
+
 
 {% block body %}
     <div class="container content profile">
         <div class="row">
             <!--Left Sidebar-->
             <div class="col-md-3 md-margin-bottom-40">
-                <img class="img-responsive profile-img margin-bottom-20" src="{{ asset('assets/img/team/img32-md.jpg') }}" alt="">
-                {{ knp_menu_render('profile', {'currentClass': 'active', 'allow_safe_labels': true})|raw }}
-                <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-                    <li class="list-group-item active">
-                        <a href="page_profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_me.html"><i class="fa fa-user"></i> Profile</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_users.html"><i class="fa fa-group"></i> Users</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_projects.html"><i class="fa fa-cubes"></i> My Projects</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_comments.html"><i class="fa fa-comments"></i> Comments</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_history.html"><i class="fa fa-history"></i> History</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="page_profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
-                    </li>
-                </ul>
+                {{ knp_menu_render('profile', {'currentClass': 'active bg-color-green', 'allow_safe_labels': true})|raw }}
+
+
+                <hr>
 
                 <div class="panel-heading-v2 overflow-h">
                     <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Task Progress</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
                 </div>
                 <h3 class="heading-xs">Web Design <span class="pull-right">92%</span></h3>
                 <div class="progress progress-u progress-xxs">
@@ -54,58 +39,6 @@
 
                 <hr>
 
-                <!--Notification-->
-                <div class="panel-heading-v2 overflow-h">
-                    <h2 class="heading-xs pull-left"><i class="fa fa-bell-o"></i> Notification</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                </div>
-                <ul class="list-unstyled mCustomScrollbar margin-bottom-20 _mCS_1 mCS-autoHide" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                            <li class="notification">
-                                <i class="icon-custom icon-sm rounded-x icon-bg-red icon-line icon-envelope"></i>
-                                <div class="overflow-h">
-                                    <span><strong>Albert Heller</strong> has sent you email.</span>
-                                    <small>Two minutes ago</small>
-                                </div>
-                            </li>
-                            <li class="notification">
-                                <img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img6.jpg" alt="">
-                                <div class="overflow-h">
-                                    <span><strong>Taylor Lee</strong> started following you.</span>
-                                    <small>Today 18:25 pm</small>
-                                </div>
-                            </li>
-                            <li class="notification">
-                                <i class="icon-custom icon-sm rounded-x icon-bg-yellow icon-line fa fa-bolt"></i>
-                                <div class="overflow-h">
-                                    <span><strong>Natasha Kolnikova</strong> accepted your invitation.</span>
-                                    <small>Yesterday 1:07 pm</small>
-                                </div>
-                            </li>
-                            <li class="notification">
-                                <img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img1.jpg" alt="">
-                                <div class="overflow-h">
-                                    <span><strong>Mikel Andrews</strong> commented on your Timeline.</span>
-                                    <small>23/12 11:01 am</small>
-                                </div>
-                            </li>
-                            <li class="notification">
-                                <i class="icon-custom icon-sm rounded-x icon-bg-blue icon-line fa fa-comments"></i>
-                                <div class="overflow-h">
-                                    <span><strong>Bruno Js.</strong> added you to group chating.</span>
-                                    <small>Yesterday 1:07 pm</small>
-                                </div>
-                            </li>
-                            <li class="notification">
-                                <img class="rounded-x mCS_img_loaded" src="assets/img/testimonials/img6.jpg" alt="">
-                                <div class="overflow-h">
-                                    <span><strong>Taylor Lee</strong> changed profile picture.</span>
-                                    <small>23/12 15:15 pm</small>
-                                </div>
-                            </li>
-                        </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 199px; max-height: 286px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></ul>
-                <button type="button" class="btn-u btn-u-default btn-u-sm btn-block">Load More</button>
-                <!--End Notification-->
-
                 <div class="margin-bottom-50"></div>
 
                 <!--Datepicker-->
@@ -119,67 +52,275 @@
             <!-- Profile Content -->
             <div class="col-md-9">
                 <div class="profile-body">
-                    <!--Service Block v3-->
-                    <div class="row margin-bottom-10">
-                        <div class="col-sm-6 sm-margin-bottom-20">
-                            <div class="service-block-v3 service-block-u">
-                                <i class="icon-users"></i>
-                                <span class="service-heading">Overall Visits</span>
-                                <span class="counter">52,147</span>
 
-                                <div class="clearfix margin-bottom-10"></div>
-
-                                <div class="row margin-bottom-20">
-                                    <div class="col-xs-6 service-in">
-                                        <small>Last Week</small>
-                                        <h4 class="counter">1,385</h4>
-                                    </div>
-                                    <div class="col-xs-6 text-right service-in">
-                                        <small>Last Month</small>
-                                        <h4 class="counter">6,048</h4>
-                                    </div>
-                                </div>
-                                <div class="statistics">
-                                    <h3 class="heading-xs">Statistics in Progress Bar <span class="pull-right">67%</span></h3>
-                                    <div class="progress progress-u progress-xxs">
-                                        <div style="width: 67%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="67" role="progressbar" class="progress-bar progress-bar-light">
+                    <!--Profile Blog-->
+                    <div class="tab-v1">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#dominios" data-toggle="tab" aria-expanded="true">Dominios</a></li>
+                            <li class=""><a href="#hosting" data-toggle="tab" aria-expanded="false">Hosting</a></li>
+                            <li class=""><a href="#vps" data-toggle="tab" aria-expanded="false">VPS</a></li>
+                            <li class=""><a href="#servicios" data-toggle="tab" aria-expanded="false">Servicios</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="dominios">
+                                <div class="panel panel-profile">
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">REYNALDE.COM</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
                                         </div>
                                     </div>
-                                    <small>11% less <strong>than last month</strong></small>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-blue">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">REYNALDE.COM</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-red">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">REYNALDE.COM</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">REYNALDE.COM</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">REYNALDE.COM</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="hosting">
+                                <div class="panel panel-profile">
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">HOSTING 1</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-blue">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">HOSTING 2</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-red">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">HOSTING 3</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">HOSTING 4</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">HOSTING 5</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vps">
+                                <div class="panel panel-profile">
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 1</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-blue">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 2</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-red">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 3</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 4</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 5</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="servicios">
+                                <div class="panel panel-profile">
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Live Chat - Nombre</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-blue">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Newslletter - Nombre</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-red">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 3</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 4</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats bg-color-green">
+                                            <small>Vence:</small>
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">VPS 5</a></h3>
+                                            <p>Administrado</p>
+                                            <p><a href="#">Renovar</a></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-6">
-                            <div class="service-block-v3 service-block-blue">
-                                <i class="icon-screen-desktop"></i>
-                                <span class="service-heading">Overall Page Views</span>
-                                <span class="counter">324,056</span>
-
-                                <div class="clearfix margin-bottom-10"></div>
-
-                                <div class="row margin-bottom-20">
-                                    <div class="col-xs-6 service-in">
-                                        <small>Last Week</small>
-                                        <h4 class="counter">26,904</h4>
-                                    </div>
-                                    <div class="col-xs-6 text-right service-in">
-                                        <small>Last Month</small>
-                                        <h4 class="counter">124,766</h4>
-                                    </div>
-                                </div>
-                                <div class="statistics">
-                                    <h3 class="heading-xs">Statistics in Progress Bar <span class="pull-right">89%</span></h3>
-                                    <div class="progress progress-u progress-xxs">
-                                        <div style="width: 89%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="89" role="progressbar" class="progress-bar progress-bar-light">
-                                        </div>
-                                    </div>
-                                    <small>15% higher <strong>than last month</strong></small>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/end row-->
-                    <!--End Service Block v3-->
+                    </div>
+                    <!--End Profile Blog-->
 
                     <hr>
 
@@ -320,55 +461,8 @@
                         <!--End Profile Event-->
                     </div><!--/end row-->
 
-                    <hr>
 
-                    <!--Profile Blog-->
-                    <div class="panel panel-profile">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Contacts</h2>
-                            <a href="page_profile_users.html" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-xs pull-right">View All</a>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="profile-blog blog-border">
-                                        <img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
-                                        <div class="name-location">
-                                            <strong>Mikel Andrews</strong>
-                                            <span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
-                                        </div>
-                                        <div class="clearfix margin-bottom-20"></div>
-                                        <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-                                        <hr>
-                                        <ul class="list-inline share-list">
-                                            <li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
-                                            <li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
-                                            <li><i class="fa fa-twitter"></i><a href="#">Retweet</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
 
-                                <div class="col-sm-6">
-                                    <div class="profile-blog blog-border">
-                                        <img class="rounded-x" src="assets/img/testimonials/img4.jpg" alt="">
-                                        <div class="name-location">
-                                            <strong>Natasha Kolnikova</strong>
-                                            <span><i class="fa fa-map-marker"></i><a href="#">Moscow,</a> <a href="#">Russia</a></span>
-                                        </div>
-                                        <div class="clearfix margin-bottom-20"></div>
-                                        <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-                                        <hr>
-                                        <ul class="list-inline share-list">
-                                            <li><i class="fa fa-bell"></i><a href="#">37 Notifications</a></li>
-                                            <li><i class="fa fa-group"></i><a href="#">46 Followers</a></li>
-                                            <li><i class="fa fa-twitter"></i><a href="#">Retweet</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Profile Blog-->
 
                     <hr>
 

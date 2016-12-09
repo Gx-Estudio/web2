@@ -81,20 +81,17 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('dashboard', array('uri' => '#', 'label' => '<i class="fa fa-bar-chart-o"></i> Mis Productos</a>', 'extras' => array('safe_label' => true)))
+        $menu->addChild('dashboard', array('route' => 'fos_user_profile_show', 'label' => '<i class="fa fa-cubes"></i> Mis Productos</a>', 'extras' => array('safe_label' => true)))
             ->setAttribute('class', 'list-group-item');
 
-        $menu->addChild('comprobantes', array('uri' => '#', 'label' => '<i class="fa fa-bar-chart-o"></i> Pagos y Facturación</a>', 'extras' => array('safe_label' => true)))
+        $menu->addChild('comprobantes', array('uri' => '#', 'label' => '<i class="fa fa-credit-card"></i> Pagos y Facturación</a>', 'extras' => array('safe_label' => true)))
             ->setAttribute('class', 'list-group-item');
 
-        $menu->addChild('informes', array('uri' => '#', 'label' => '<i class="fa fa-bar-chart-o"></i> Informes</a>', 'extras' => array('safe_label' => true)))
+        $menu->addChild('informes', array('uri' => '#', 'label' => '<i class="fa fa-comments"></i> Soporte Técnico</a>', 'extras' => array('safe_label' => true)))
             ->setAttribute('class', 'list-group-item');
 
-        $menu->addChild('productos', array('uri' => '#collapse-typography', 'label' => '<i class="fa fa-bar-chart-o"></i> Mi Cuenta</a>', 'extras' => array('safe_label' => true)))
-            ->setAttribute('class', 'list-group-item list-toggle active');
-
-        $menu['productos']->addChild('<i class="fa fa-bar-chart-o"></i> Uno</a>', array('uri' => '#', 'extras' => array('safe_label' => true)))
-            ->setAttribute('class', 'list-group-item list-toggle active');
+        $menu->addChild('cuenta', array('uri' => '#', 'label' => '<i class="fa fa-cogs"></i> Mi Cuenta</a>', 'extras' => array('safe_label' => true)))
+            ->setAttribute('class', 'list-group-item');
 
         $menu->setChildrenAttribute('class', 'list-group sidebar-nav-v1 margin-bottom-40');
         return $menu;
